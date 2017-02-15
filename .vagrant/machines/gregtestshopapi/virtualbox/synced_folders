@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/gregtestshopapi":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/gregtestshopapi","hostpath":"/Users/greg/Documents/Websites/gregtestshopapi","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/greg/Documents/Websites/gregtestshopapi","disabled":false,"__vagrantfile":true}}}
