@@ -6,11 +6,10 @@ use App\Product;
 
 class ExportController extends Controller
 {
-
     /**
      * Exports all product data to a CSV file
      */
-    public function exportProductToCSV()
+    public function exportProductToCSV(CsvExport $exporter)
     {
         $products = Product::orderBy('id', 'desc')->get();
 
@@ -18,7 +17,7 @@ class ExportController extends Controller
             return $product->format();
         });
 
-        (new CsvExport)->export($array->all(), 'products');
+        $exporter->export($array->all(), 'products');
     }
 
 }
