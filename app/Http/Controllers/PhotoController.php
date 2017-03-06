@@ -7,6 +7,13 @@ use App\PhotoHandler;
 
 class PhotoController extends Controller
 {
+
+  protected $photoHandler;
+
+  public function __construct(PhotoHandler $photoHandler) {
+    $this->photoHandler = $photoHandler;
+  }
+
   public function upload(Request $request) {
 
     $photo = $request->photo;
@@ -14,7 +21,7 @@ class PhotoController extends Controller
     if ($photo) {
       try {        
 
-        $filename = (new PhotoHandler)->upload($photo);
+        $filename = $this->photoHandler->upload($photo);
 
         return response()->json($filename, 200);
       } catch (Exception $e) {
